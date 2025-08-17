@@ -1,17 +1,28 @@
 import pandas as pd
 from person import *
+from country import *
 
 class Reader:
     def __init__(self):
-        data = pd.ExcelFile('SpermPositive.xlsx')
-        self.df = pd.read_excel(data, sheet_name='Sheet')
+        participantData = pd.ExcelFile('SpermPositive.xlsx')
+        countryData = pd.ExcelFile('countries.xlsx')
+        self.country_df = pd.read_excel(countryData, sheet_name='Sheet1')
+        self.participantdf = pd.read_excel(participantData, sheet_name='Sheet')
     
-    def getDataFrame(self):
-        return self.df
+    def getParticipantDataFrame(self):
+        return self.participantdf
 
-    def print_columns_and_a_value(self):
+    def getCountryDataFrame(self):
+        return self.country_df
+    
+    def print_columns_and_a_value_participants(self):
         for col in self.df.columns:
             value = self.df[col].iloc[1] if not self.df[col].empty else None
+            print(f"Column: {col}, 2nd value: {value}")
+    
+    def print_columns_and_a_value_countries(self):
+        for col in self.country_df.columns:
+            value = self.country_df[col].iloc[1] if not self.country_df[col].empty else None
             print(f"Column: {col}, 2nd value: {value}")
 
     def get_participants(self):
@@ -114,3 +125,18 @@ class Reader:
                 recipient.moreText = row["Anything else you'd like to share?"]
                 participants.append(recipient)
         return participants
+    
+    def get_countries(self):
+        """
+        This function reads the country data and returns a list of Country objects.
+        """
+        countries = []
+        for _, row in self.country_df.iterrows():
+            country = Country(
+                country=row['Country'],
+                latitude=row['Latitude'],
+                longitude=row['Longitude'],
+                name=row['Name']
+            )
+            countries.append(country)
+        return countries
