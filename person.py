@@ -131,6 +131,18 @@ class Person:
     def setWeight(self, weight):
         self.weight = weight
 
+    def setCriteriaText(self, criteriaText):
+        self.criteriaText = criteriaText
+    
+    def setHomeFertility(self, homeFertility):
+        self.homeFertility = homeFertility
+    
+    def setPrivateDonor(self, privateDonor):
+        self.privateDonor = privateDonor
+
+    def setInvolvementLevel(self, involvementLevel):
+        self.involvementLevel = involvementLevel
+
     def setAwesomeText(self, awesomeText):
         self.awesomeText = awesomeText
     

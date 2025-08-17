@@ -109,7 +109,7 @@ class Reader:
                 else:
                     donor.involvementLevel = 1
 
-                donor.criteriaText = row["Sperm Positive is used by heterosexual and LGBTI+ singles and couples. Please specify any preferences or other criteria, such as cross-cultural or religious restrictions."]
+                donor.setCriteriaText = row["Sperm Positive is used by heterosexual and LGBTI+ singles and couples. Please specify any preferences or other criteria, such as cross-cultural or religious restrictions."]
                 donor.awesomeText = row["What makes you awesome?"]
                 donor.medicalText = row["Please give details of your medical history, or family medical history, that may be relevant."]
                 donor.moreText = row["Anything else you'd like to share?"]
