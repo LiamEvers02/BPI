@@ -1,5 +1,6 @@
+import country
 class Person:
-    def __init__(self, RID, CID, Start_Date, End_Date, age, IP_Address=None, Email=None, FirstName=None, LastName=None, City=None, Country=None, height=None, weight=None, nationality=None, ethnicity=None):
+    def __init__(self, RID, CID, Start_Date, End_Date, age, IP_Address=None, Email=None, FirstName=None, LastName=None, City=None, country=None, height=None, weight=None, nationality=None, ethnicity=None):
         try:
             self.RID = int(RID)
             self.CID = int(CID)
@@ -12,7 +13,7 @@ class Person:
         self.LastName = LastName
         self.age = age
         self.City = City
-        self.Country = Country
+        self.country = country
         self.height = height
         self.weight = weight
         self.nationality = nationality
@@ -57,7 +58,7 @@ class Person:
         return self.City
     
     def getCountry(self):
-        return self.Country
+        return self.country
 
     def getHeight(self):
         return self.height
@@ -122,8 +123,8 @@ class Person:
     def setCity(self, City):
         self.City = City
     
-    def setCountry(self, Country):
-        self.Country = Country
+    def setCountry(self, country):
+        self.country = country
     
     def setHeight(self, height):
         self.height = height
@@ -153,18 +154,18 @@ class Person:
         self.moreText = moreText
 
     def __str__(self):
-        return f"Person: RID={self.RID},\nCID={self.CID},\nStart Date={self.Start_Date},\nEnd Date={self.End_Date},\nIP Address={self.IP_Address},\nName={self.FirstName} {self.LastName},\nAge={self.age},\nCity={self.City},\nCountry={self.Country},\nHeight={self.height}, Weight={self.weight},\nNationality={self.nationality}, Ethnicity={self.ethnicity},\nHome Fertility={self.homeFertility}, Private Donor={self.privateDonor}, Involvement Level={self.involvementLevel},\nCriteria={self.criteriaText},\nAwesomeText={self.awesomeText},\nMedicalText={self.medicalText},\nMoreText={self.moreText}\n"
+        return f"Person: RID={self.RID},\nCID={self.CID},\nStart Date={self.Start_Date},\nEnd Date={self.End_Date},\nIP Address={self.IP_Address},\nName={self.FirstName} {self.LastName},\nAge={self.age},\nCity={self.City},\nCountry={self.country},\nHeight={self.height}, Weight={self.weight},\nNationality={self.nationality}, Ethnicity={self.ethnicity},\nHome Fertility={self.homeFertility}, Private Donor={self.privateDonor}, Involvement Level={self.involvementLevel},\nCriteria={self.criteriaText},\nAwesomeText={self.awesomeText},\nMedicalText={self.medicalText},\nMoreText={self.moreText}\n"
 
 class Donor(Person):
-    def __init__(self, RID, CID, Start_Date, End_Date, IP_Address=None, Email=None, FirstName=None, LastName=None, age=None, City=None, Country=None, height=None, weight=None, nationality=None, ethnicity=None):
-        super().__init__(RID, CID, Start_Date, End_Date, age, IP_Address, Email, FirstName, LastName, City, Country, height, weight, nationality, ethnicity)
+    def __init__(self, RID, CID, Start_Date, End_Date, IP_Address=None, Email=None, FirstName=None, LastName=None, age=None, City=None, country=None, height=None, weight=None, nationality=None, ethnicity=None):
+        super().__init__(RID, CID, Start_Date, End_Date, age, IP_Address, Email, FirstName, LastName, City, country, height, weight, nationality, ethnicity)
     
     def __str__(self):
-        return f"Donor: RID={self.RID},\nCID={self.CID},\nStart Date={self.Start_Date},\nEnd Date={self.End_Date},\nIP Address={self.IP_Address},\nName={self.FirstName} {self.LastName},\nAge={self.age},\nCity={self.City},\nCountry={self.Country},\nHeight={self.height}, Weight={self.weight},\nNationality={self.nationality}, Ethnicity={self.ethnicity},\nHome Fertility={self.homeFertility}, Private Donor={self.privateDonor}, Involvement Level={self.involvementLevel},\nCriteria={self.criteriaText},\nAwesomeText={self.awesomeText},\nMedicalText={self.medicalText},\nMoreText={self.moreText}\n"
+        return f"Donor: RID={self.RID},\nCID={self.CID},\nStart Date={self.Start_Date},\nEnd Date={self.End_Date},\nIP Address={self.IP_Address},\nName={self.FirstName} {self.LastName},\nAge={self.age},\nCity={self.City},\nCountry={self.country},\nHeight={self.height}, Weight={self.weight},\nNationality={self.nationality}, Ethnicity={self.ethnicity},\nHome Fertility={self.homeFertility}, Private Donor={self.privateDonor}, Involvement Level={self.involvementLevel},\nCriteria={self.criteriaText},\nAwesomeText={self.awesomeText},\nMedicalText={self.medicalText},\nMoreText={self.moreText}\n"
 
 class Recipient(Person):
-    def __init__(self, RID, CID, Start_Date, End_Date, IP_Address=None, Email=None, FirstName=None, LastName=None, age=None, City=None, Country=None, height=None, weight=None, nationality=None, ethnicity=None):
-        super().__init__(RID, CID, Start_Date, End_Date, age, IP_Address, Email, FirstName, LastName, City, Country, height, weight, nationality, ethnicity)
+    def __init__(self, RID, CID, Start_Date, End_Date, IP_Address=None, Email=None, FirstName=None, LastName=None, age=None, City=None, country=None, height=None, weight=None, nationality=None, ethnicity=None):
+        super().__init__(RID, CID, Start_Date, End_Date, age, IP_Address, Email, FirstName, LastName, City, country, height, weight, nationality, ethnicity)
     
     def __str__(self):
-        return f"Recipient: RID={self.RID},\nCID={self.CID},\nStart Date={self.Start_Date},\nEnd Date={self.End_Date},\nIP Address={self.IP_Address},\nName={self.FirstName} {self.LastName},\nAge={self.age},\nCity={self.City},\nCountry={self.Country},\nHeight={self.height}, Weight={self.weight},\nNationality={self.nationality}, Ethnicity={self.ethnicity},\nHome Fertility={self.homeFertility}, Private Donor={self.privateDonor}, Involvement Level={self.involvementLevel},\nCriteria={self.criteriaText},\nAwesomeText={self.awesomeText},\nMedicalText={self.medicalText},\nMoreText={self.moreText}\n"
+        return f"Recipient: RID={self.RID},\nCID={self.CID},\nStart Date={self.Start_Date},\nEnd Date={self.End_Date},\nIP Address={self.IP_Address},\nName={self.FirstName} {self.LastName},\nAge={self.age},\nCity={self.City},\nCountry={self.country},\nHeight={self.height}, Weight={self.weight},\nNationality={self.nationality}, Ethnicity={self.ethnicity},\nHome Fertility={self.homeFertility}, Private Donor={self.privateDonor}, Involvement Level={self.involvementLevel},\nCriteria={self.criteriaText},\nAwesomeText={self.awesomeText},\nMedicalText={self.medicalText},\nMoreText={self.moreText}\n"

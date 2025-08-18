@@ -31,7 +31,7 @@ class Reader:
         It distinguishes between donors and recipients based on their responses.
         """
         participants = []
-        for _, row in self.df.iterrows():
+        for _, row in self.participantdf.iterrows():
             if row['First of all, tell us which one applies to you'] == "I'm interested in donating":
                 donor = Donor(
                     RID=row['Respondent ID'],
@@ -44,7 +44,7 @@ class Reader:
                     LastName=row['Last Name'],
                     age=row['Demographics'],
                     City=row['Unnamed: 27'],
-                    Country=row['Unnamed: 30'],
+                    country=Country.get_country_by_name(row['Unnamed: 30']),
                     height=row['Unnamed: 34'],
                     weight=row['Unnamed: 35'],
                     nationality=row['Unnamed: 36'],
@@ -91,7 +91,7 @@ class Reader:
                     LastName=row['Last Name'],
                     age=row['Demographics'],
                     City=row['Unnamed: 27'],
-                    Country=row['Unnamed: 30'],
+                    country=Country.get_country_by_name(row['Unnamed: 30']),
                     height=row['Unnamed: 34'],
                     weight=row['Unnamed: 35'],
                     nationality=row['Unnamed: 36'],
